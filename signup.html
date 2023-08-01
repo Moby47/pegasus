@@ -51,12 +51,12 @@ Author URL: http://w3layouts.com
 			<h3 class="page-header">Sign Up</h3>
 		
 			<div class="contact-box">
-				<form action="https://sendmail.w3layouts.com/submitForm" method="post">
+				<form data-ms-form="signup" method="post">
 				<div class="text">
-					<input type="text" name="w3lSender" placeholder="First Name" required=""/>
-					<input type="email" name="w3lSender" placeholder="Email" required=""/>
+					<input type="text" name="w3lSender" placeholder="First Name" required="" data-ms-member="name"/>
+					<input type="email" name="w3lSender" placeholder="Email" required="" data-ms-member="email"/>
 					<br><br><br>
-					<input type="password" name="w3lSubject" placeholder="Password" required=""/>
+					<input type="password" name="w3lSubject" placeholder="Password" required="" data-ms-member="password"/>
 				</div>
 				<div>
 					<input type="submit" class="submit" value="submit" />
