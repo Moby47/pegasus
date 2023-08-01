@@ -1300,6 +1300,24 @@ ul.tags_links li a:hover {
 	-webkit-appearance: none;
 }
 
+.text input[type="email"] {
+	width: 31%;
+	margin-right: 2%;
+	padding: 10px;
+	border: 1px solid #ff7105;
+	outline: none;
+	-webkit-appearance: none;
+}
+
+.text input[type="password"] {
+	width: 31%;
+	margin-right: 2%;
+	padding: 10px;
+	border: 1px solid #ff7105;
+	outline: none;
+	-webkit-appearance: none;
+}
+
 .text textarea {
 	width: 97.7%;
 	height: 250px;
@@ -1317,6 +1335,18 @@ ul.tags_links li a:hover {
 
 .text-but input[type="submit"],
 .text-cmt input[type="submit"] {
+	font-size: 0.875em;
+	color: #fff;
+	text-transform: uppercase;
+	background: #ff7105;
+	padding: 10px 20px;
+	outline: none;
+	-webkit-appearance: none;
+	cursor: pointer;
+	border: 0;
+}
+
+.submit{
 	font-size: 0.875em;
 	color: #fff;
 	text-transform: uppercase;
