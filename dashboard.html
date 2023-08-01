@@ -53,10 +53,12 @@ Author URL: http://w3layouts.com
 		<div class="page-path">
 			<ul class="path-list">
 				<!--<li><a href="index.html">Home</a></li>&nbsp;&nbsp;/&nbsp;&nbsp;-->
-				<li class="act">Hello <span data-ms-member="name"></span> 👋 </li>
+				<li class="act">Hello <span data-ms-member="name"></span></li>
 			</ul>
-			<p><a href="#" data-ms-modal="profile">Profile</a></p>&nbsp;&nbsp;&nbsp;&nbsp;
-			<p><a href="#" data-ms-action="logout">Logout</a></p>
+			<p><a href="#" data-ms-modal="profile">Profile</a> 
+				&nbsp;&nbsp;&nbsp;&nbsp;
+				 <a href="#" data-ms-action="logout">Logout</a></p>
+			
 			<div class="clearfix"></div>
 		</div>
 		<h3 class="page-header">
@@ -205,36 +207,40 @@ Author URL: http://w3layouts.com
 <!-- Footer Ends Here -->
 
 <script>
-    const emailInput = document.querySelector('input[data-ms-member="email"]');
-	console.log(emailInput)
-    const email = emailInput.value;
-	console.log(email)
-    const encodedEmail = encodeURIComponent(email);
-	console.log(encodedEmail)
-    const apiKey = 'sk_sb_32d7476fab908c4842cc';
-    const url = `https://admin.memberstack.com/members/${encodedEmail}`;
+   document.addEventListener('DOMContentLoaded', function() {
+      const emailInput = document.querySelector('input[data-ms-member="email"]');
+      if (emailInput) {
+        const email = emailInput.value.trim(); // Use .trim() to remove any leading/trailing spaces
+        if (email) {
+          const encodedEmail = encodeURIComponent(email);
+          const apiKey = 'sk_sb_32d7476fab908c4842cc';
+          const url = `https://admin.memberstack.com/members/${encodedEmail}`;
 
-    fetch(url, {
-      headers: {
-        'x-api-key': apiKey
+          fetch(url, {
+            headers: {
+              'x-api-key': apiKey
+            }
+          })
+          .then(response => response.json())
+          .then(data => {
+            // Extract the planName from the planConnections object
+            const planConnections = data.data.planConnections;
+            if (planConnections && planConnections.length > 0) {
+              const planName = planConnections[0].planName;
+              console.log('Plan Name:', planName);
+            } else {
+              console.log('No plan connections found.');
+            }
+          })
+          .catch(error => {
+            console.error('Error:', error);
+          });
+        } else {
+          console.log('Email input is empty.');
+        }
+      } else {
+        console.log('Input element not found.');
       }
-    })
-    .then(response => response.json())
-    .then(data => {
-      console.log(data); // This will log the API response to the console
-
-	  // Extract the planName from the planConnections object
-      const planConnections = data.data.planConnections;
-      if (planConnections && planConnections.length > 0) {
-        const planName = planConnections[0].planName;
-        console.log('Plan Name:', planName);
-	} else {
-        console.log('No plan connections found.');
-      }
-
-    })
-    .catch(error => {
-      console.error('Error:', error);
     });
   </script>
 
