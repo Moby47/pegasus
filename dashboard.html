@@ -212,7 +212,9 @@ Author URL: http://w3layouts.com
       if (emailInput) {
         const email = emailInput.value.trim(); // Use .trim() to remove any leading/trailing spaces
         if (email) {
+			console.log('email',email)
           const encodedEmail = encodeURIComponent(email);
+		  console.log('encodedEmail',encodedEmail)
           const apiKey = 'sk_sb_32d7476fab908c4842cc';
           const url = `https://admin.memberstack.com/members/${encodedEmail}`;
 
