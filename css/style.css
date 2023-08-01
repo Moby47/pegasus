@@ -818,7 +818,13 @@ ul.game-list {
 
 ul.game-list li {
 	display: block;
-
+	font-size: 0.875em;
+	color: #3c3a3e;
+	font-weight: 100;
+	padding: 0.2em 1em 0.5em;
+	border-bottom: 1px solid #3c3a3e;
+	display: block;
+	text-transform: uppercase;
 }
 
 ul.game-list li a {
@@ -829,6 +835,10 @@ ul.game-list li a {
 	border-bottom: 1px solid #3c3a3e;
 	display: block;
 	text-transform: uppercase;
+}
+
+ul.game-list li:hover {
+	color: #ff7105;
 }
 
 ul.game-list li a:hover {
