@@ -106,30 +106,14 @@ Author URL: http://w3layouts.com
 			<input type="hidden" name="email" data-ms-member="email">
 
           	<h4>My Events</h4>
-          	<ul class="game-list">
-          		<li><a href="#">Shooting</a></li>
-          		<li><a href="#">Action</a></li>
-          		<li><a href="#">Cars</a></li>
-          		<li><a href="#">Wressling</a></li>
-          		<li><a href="#">bikes</a></li>
-          		<li><a href="#">bicycle</a></li>
-          		<li><a href="#">Racing</a></li>
-          		<li><a href="#">Zombies</a></li>
-          	</ul>
-          <!--	<h4>Old games</h4>
-          	<ul class="game-list">
-          		<li><a href="games.html">Shooting</a></li>
-          		<li><a href="games.html">Action</a></li>
-          		<li><a href="games.html">Cars</a></li>
-          		<li><a href="games.html">Wressling</a></li>
-          		<li><a href="games.html">bikes</a></li>
-          		<li><a href="games.html">bicycle</a></li>
-          		<li><a href="games.html">Racing</a></li>
-          		<li><a href="games.html">Zombies</a></li>
-          		<li><a href="games.html">Action</a></li>
-          		<li><a href="games.html">Cars</a></li>
-          		<li><a href="games.html">Wressling</a></li>
-          	</ul>-->
+
+			<!-- Add an empty list to display the plan names -->
+			<ul class="game-list" id="plan-list">
+			</ul>
+
+			 <!-- Add a separate message for no plans found -->
+  		<p id="no-plans-message" style="display: none;">No plans found.</p>
+
           </div>
           <div class="clearfix"></div>
 	</div>
@@ -229,10 +213,19 @@ Author URL: http://w3layouts.com
             // Extract the planName from the planConnections object
             const planConnections = data.data.planConnections;
             if (planConnections && planConnections.length > 0) {
-              const planName = planConnections[0].planName;
-              console.log('Plan Name:', planName);
+              planConnections.forEach(connection => {
+                const planName = connection.planName;
+
+				console.log('Plan Name:', planName);
+				
+                const listItem = document.createElement('li');
+                listItem.textContent = planName;
+                planList.appendChild(listItem);
+              });
             } else {
-              console.log('No plan connections found.');
+               // If no plans found, show the no-plans-message
+			 const noPlansMessage = document.getElementById('no-plans-message');
+              noPlansMessage.style.display = 'block';
             }
           })
           .catch(error => {
