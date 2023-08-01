@@ -107,12 +107,13 @@ Author URL: http://w3layouts.com
 
           	<h4>My Events</h4>
 
-			<!-- Add an empty list to display the plan names -->
-			<ul class="game-list" id="plan-list">
-			</ul>
+<!-- Use an empty <ul> to show the plans -->
+	<ul class="game-list" id="plan-list">
+	</ul>
 
-			 <!-- Add a separate message for no plans found -->
-  		<p id="no-plans-message" style="display: none;">No plans found.</p>
+  <!-- Add a separate message for no plans found -->
+  <p id="no-plans-message" style="display: none;">No plans found.</p>
+
 
           </div>
           <div class="clearfix"></div>
@@ -208,23 +209,25 @@ Author URL: http://w3layouts.com
             }
           })
           .then(response => response.json())
-          .then(data => {
-			console.log(data)
-            // Extract the planName from the planConnections object
+		  .then(data => {
             const planConnections = data.data.planConnections;
+            const planList = document.getElementById('plan-list');
+
+            // Clear the list before adding new <li> elements
+            planList.innerHTML = '';
+
             if (planConnections && planConnections.length > 0) {
               planConnections.forEach(connection => {
                 const planName = connection.planName;
+                console.log('Plan Name:', planName);
 
-				console.log('Plan Name:', planName);
-				
                 const listItem = document.createElement('li');
                 listItem.textContent = planName;
                 planList.appendChild(listItem);
               });
             } else {
-               // If no plans found, show the no-plans-message
-			 const noPlansMessage = document.getElementById('no-plans-message');
+              // If no plans found, show the no-plans-message
+              const noPlansMessage = document.getElementById('no-plans-message');
               noPlansMessage.style.display = 'block';
             }
           })
