@@ -825,6 +825,7 @@ ul.game-list li {
 	border-bottom: 1px solid #3c3a3e;
 	display: block;
 	text-transform: uppercase;
+	text-align: center !important;
 }
 
 ul.game-list li a {
