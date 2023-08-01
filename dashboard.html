@@ -53,14 +53,14 @@ Author URL: http://w3layouts.com
 		<div class="page-path">
 			<ul class="path-list">
 				<!--<li><a href="index.html">Home</a></li>&nbsp;&nbsp;/&nbsp;&nbsp;-->
-				<li class="act">Hello <span data-ms-member="email"> </span> user mail </li>
+				<li class="act">Hello <span data-ms-member="name"></span> 👋 </li>
 			</ul>
-			<p><a href="#" data-ms-modal="profile">Profile</a></p>
+			<p><a href="#" data-ms-modal="profile">Profile</a></p>&nbsp;&nbsp;&nbsp;&nbsp;
 			<p><a href="#" data-ms-action="logout">Logout</a></p>
 			<div class="clearfix"></div>
 		</div>
 		<h3 class="page-header">
-			List of Game Events
+			List of Events
 		</h3>
 		<div class="main">
 			<div class="view view-first">
@@ -206,8 +206,11 @@ Author URL: http://w3layouts.com
 
 <script>
     const emailInput = document.querySelector('input[data-ms-member="email"]');
+	console.log(emailInput)
     const email = emailInput.value;
+	console.log(email)
     const encodedEmail = encodeURIComponent(email);
+	console.log(encodedEmail)
     const apiKey = 'sk_sb_32d7476fab908c4842cc';
     const url = `https://admin.memberstack.com/members/${encodedEmail}`;
 
