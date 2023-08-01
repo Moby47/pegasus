@@ -225,6 +225,7 @@ Author URL: http://w3layouts.com
           })
           .then(response => response.json())
           .then(data => {
+			console.log(data)
             // Extract the planName from the planConnections object
             const planConnections = data.data.planConnections;
             if (planConnections && planConnections.length > 0) {
