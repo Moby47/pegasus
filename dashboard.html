@@ -222,46 +222,20 @@ Author URL: http://w3layouts.com
 			const button2a = document.getElementById('btn2a');
 			const button3a = document.getElementById('btn3a');
 
-			console.log('planConnections',planConnections.planName)
+			console.log('planConnections',planConnections)
 			
-// Loop through each plan connection
-planConnections.forEach(connection => {
-  const planName = connection.planName;
-  
-  if (planName === "Pegasus Plan") {
-    // Do something specific for Pegasus Plan plans
-    console.log("Handling Pegasus Plan plan...");
-  } else {
-    // Do something for plans other than Pegasus Plan
-	console.log("not Handling Pegasus Plan plan...");
-  }
-
-  if (planName === "Test Plan") {
-    // Do something specific for Test Plan plans
-    console.log("Handling Test Plan plan...");
-  } else {
-    // Do something for plans other than Test Plan
-	console.log("not Handling Test Plan plan...");
-  }
-
-  if (planName === "paid") {
-    // Do something specific for paid plans
-    console.log("Handling paid plan...");
-  } else {
-    // Do something for plans other than paid
-	console.log("Handling paid plan...");
-  }
-
-
-
-});
-
-
 
             if (planConnections && planConnections.length > 0) {
+
+				let paidPlanExists = false;
+
               planConnections.forEach(connection => {
                 const planName = connection.planName;
                 console.log('Plan Name:', planName);
+
+				if (planName === 'paid') {
+    paidPlanExists = true;
+  }
 
 				//Show plans
                 const listItem = document.createElement('li');
@@ -292,6 +266,13 @@ planConnections.forEach(connection => {
 */
 				
               });
+
+			  if (paidPlanExists) {
+  console.log("Plan 'paid' exists.");
+} else {
+  console.log("Plan 'paid' does not exist.");
+}
+
             } else {
               // If no plans found, show the no-plans-message
               const noPlansMessage = document.getElementById('no-plans-message');
