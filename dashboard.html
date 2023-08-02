@@ -243,5 +243,35 @@ Author URL: http://w3layouts.com
     });
   </script>
 
+<script>
+	document.addEventListener("DOMContentLoaded", async function() {
+	const memberstack = window.$memberstackDom;
+	memberstack.getCurrentMember().then(async ({ data: member }) => {
+		 if (member.data) {
+			   const planId= JSON.stringify(member.data["planConnections"][0]["planId"]);
+			   console.log('planId',planId)
+			 /*  const button1 = document.getElementById('your-button-id1');
+			   const button2 = document.getElementById('your-button-id2');
+			   const button3 = document.getElementById('your-button-id3');
+			   if (planId === "Memberstack_planID1") {    
+				   button1.style.display = 'none';
+				   button2.style.display = 'block';
+				   button3.style.display = 'block';
+				} else if (planId === "Memberstack_planID2") {  
+					button1.style.display = 'block';
+					button2.style.display = 'none';
+					button3.style.display = 'block';
+			   } else if (planId === "Memberstack_planID3") {  
+					button1.style.display = 'block';
+					button2.style.display = 'block';
+					button3.style.display = 'none';
+			   }
+			   */
+		}
+	})
+	});
+	</script>
+
+
 </body>
 </html>
