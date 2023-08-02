@@ -222,7 +222,41 @@ Author URL: http://w3layouts.com
 			const button2a = document.getElementById('btn2a');
 			const button3a = document.getElementById('btn3a');
 
-			console.log('planConnections',planConnections)
+			console.log('planConnections',planConnections.planName)
+			
+// Loop through each plan connection
+planConnections.forEach(connection => {
+  const planName = connection.planName;
+  
+  if (planName === "Pegasus Plan") {
+    // Do something specific for Pegasus Plan plans
+    console.log("Handling Pegasus Plan plan...");
+  } else {
+    // Do something for plans other than Pegasus Plan
+	console.log("not Handling Pegasus Plan plan...");
+  }
+
+  if (planName === "Test Plan") {
+    // Do something specific for Test Plan plans
+    console.log("Handling Test Plan plan...");
+  } else {
+    // Do something for plans other than Test Plan
+	console.log("not Handling Test Plan plan...");
+  }
+
+  if (planName === "paid") {
+    // Do something specific for paid plans
+    console.log("Handling paid plan...");
+  } else {
+    // Do something for plans other than paid
+	console.log("Handling paid plan...");
+  }
+
+
+
+});
+
+
 
             if (planConnections && planConnections.length > 0) {
               planConnections.forEach(connection => {
