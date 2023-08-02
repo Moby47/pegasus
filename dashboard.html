@@ -72,8 +72,8 @@ Author URL: http://w3layouts.com
 				<p>In the heart of the jungle, lies the ancient Lost Temple.</p>
 				<!--paid. show when no plan-->
 				<a href="#" class="info" data-ms-price:add="prc_pegasus-2-ol14j0fnn" id="btn1">Enter</a>
-				<!--Show when plan - 
-				<a href="event.html" class="info">View</a>paid-->
+				<!--Show when plan - paid-->
+				<a href="event.html" class="info" id="btn1a">View</a>
 			  </div>
 			</div>
 			<div class="view view-first">
@@ -197,9 +197,7 @@ Author URL: http://w3layouts.com
       if (emailInput) {
         const email = emailInput.value.trim(); // Use .trim() to remove any leading/trailing spaces
         if (email) {
-			console.log('email',email)
           const encodedEmail = encodeURIComponent(email);
-		  console.log('encodedEmail',encodedEmail)
           const apiKey = 'sk_sb_32d7476fab908c4842cc';
           const url = `https://admin.memberstack.com/members/${encodedEmail}`;
 
@@ -220,6 +218,9 @@ Author URL: http://w3layouts.com
 			const button1 = document.getElementById('btn1');
 			const button2 = document.getElementById('btn2');
 			const button3 = document.getElementById('btn3');
+			const button1a = document.getElementById('btn1a');
+			const button2a = document.getElementById('btn2a');
+			const button3a = document.getElementById('btn3a');
 
             if (planConnections && planConnections.length > 0) {
               planConnections.forEach(connection => {
@@ -234,11 +235,19 @@ Author URL: http://w3layouts.com
 				//check and hide/show plans btn
 				if (planName === "Pegasus Plan") {    
 				   button1.style.display = 'none';
-				} else if (planName === "Test Plan") {  
+				}else{
+					button1a.style.display = 'block';
+				}  
+			/*	if (planName === "Test Plan") {  
 					button2.style.display = 'none';
-			   } else if (planName === "paid") {  
+			   } else{
+				button2a.style.display = 'none';
+			   } 
+			   if (planName === "paid") {  
 					button3.style.display = 'none';
-			   }
+			   }else{
+				button3a.style.display = 'none';
+			   }*/
 
               });
             } else {
