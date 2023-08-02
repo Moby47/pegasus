@@ -222,20 +222,28 @@ Author URL: http://w3layouts.com
 			const button2a = document.getElementById('btn2a');
 			const button3a = document.getElementById('btn3a');
 
-			console.log('planConnections',planConnections)
+			//console.log('planConnections',planConnections)
 			
 
             if (planConnections && planConnections.length > 0) {
 
-				let paidPlanExists = false;
+				let plan1 = false;
+				let plan2 = false;
+				let plan3 = false;
 
               planConnections.forEach(connection => {
                 const planName = connection.planName;
-                console.log('Plan Name:', planName);
+               // console.log('Plan Name:', planName);
 
+				if (planName === 'Pegasus Plan') {
+					plan1 = true;
+				}
+				if (planName === 'Test Plan') {
+					plan2 = true;
+				}
 				if (planName === 'paid') {
-    paidPlanExists = true;
-  }
+					plan3 = true;
+				}
 
 				//Show plans
                 const listItem = document.createElement('li');
@@ -267,7 +275,18 @@ Author URL: http://w3layouts.com
 				
               });
 
-			  if (paidPlanExists) {
+			  if (plan1) {
+  console.log("Plan 'peg' exists.");
+} else {
+  console.log("Plan 'peg' does not exist.");
+}
+
+if (plan2) {
+  console.log("Plan 'test' exists.");
+} else {
+  console.log("Plan 'test' does not exist.");
+}
+			  if (plan3) {
   console.log("Plan 'paid' exists.");
 } else {
   console.log("Plan 'paid' does not exist.");
