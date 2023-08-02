@@ -222,6 +222,8 @@ Author URL: http://w3layouts.com
 			const button2a = document.getElementById('btn2a');
 			const button3a = document.getElementById('btn3a');
 
+			console.log('planConnections',planConnections)
+
             if (planConnections && planConnections.length > 0) {
               planConnections.forEach(connection => {
                 const planName = connection.planName;
@@ -233,7 +235,7 @@ Author URL: http://w3layouts.com
                 planList.appendChild(listItem);
 
 				//check and hide/show plans btn
-				if (planName === "Pegasus Plan") {    
+			/*	if (planName === "Pegasus Plan") {    
 				   button1.style.display = 'none';
 				   button1a.style.display = 'inline-block';
 				}else{
@@ -253,7 +255,7 @@ Author URL: http://w3layouts.com
 				}else{
 					button3a.style.display = 'none';
 				} 
-
+*/
 				
               });
             } else {
