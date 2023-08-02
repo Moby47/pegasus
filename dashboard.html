@@ -217,10 +217,10 @@ Author URL: http://w3layouts.com
 			//initialize buttons
 			const button1 = document.getElementById('btn1');
 			const button2 = document.getElementById('btn2');
-			
+			const button3 = document.getElementById('btn3');
 			const button1a = document.getElementById('btn1a');
 			const button2a = document.getElementById('btn2a');
-			
+			const button3a = document.getElementById('btn3a');
 
             if (planConnections && planConnections.length > 0) {
               planConnections.forEach(connection => {
@@ -242,8 +242,6 @@ Author URL: http://w3layouts.com
 				   button2a.style.display = 'inline-block';
 				} 
 				if (planName === "paid") {    
-					const button3 = document.getElementById('btn3');
-					const button3a = document.getElementById('btn3a');
 				   button3.style.display = 'none';
 				   button3a.style.display = 'inline-block';
 				}
