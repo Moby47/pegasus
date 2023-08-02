@@ -71,7 +71,7 @@ Author URL: http://w3layouts.com
 				<h2>The Lost Temple</h2>
 				<p>In the heart of the jungle, lies the ancient Lost Temple.</p>
 				<!--paid. show when no plan-->
-				<a href="#" class="info" data-ms-price:add="prc_pegasus-2-ol14j0fnn">Enter</a>
+				<a href="#" class="info" data-ms-price:add="prc_pegasus-2-ol14j0fnn" id="btn1">Enter</a>
 				<!--Show when plan - 
 				<a href="event.html" class="info">View</a>paid-->
 			  </div>
@@ -82,7 +82,7 @@ Author URL: http://w3layouts.com
 				<h2>Pirate's Cove</h2>
 				<p>In the vast ocean, a hidden Pirate's Cove awaits intrepid adventurers.</p>
 								<!--paid. show when no plan-->
-								<a href="#" class="info" data-ms-price:add="prc_1000-test-plan-xn20x5l">Enter</a>
+								<a href="#" class="info" data-ms-price:add="prc_1000-test-plan-xn20x5l" id="btn2">Enter</a>
 								<!--Show when plan - 
 								<a href="event.html" class="info" >View</a>paid-->
 			  </div>
@@ -93,7 +93,7 @@ Author URL: http://w3layouts.com
 				<h2>Fantasy Realm</h2>
 				<p>Step into a world of magic and fantasy, where dragons soar through the skies.</p>
 								<!--paid. show when no plan-->
-								<a href="#" class="info" data-ms-price:add="prc_pro-xrd0s37">Enter</a>
+								<a href="#" class="info" data-ms-price:add="prc_pro-xrd0s37" id="btn3">Enter</a>
 								<!--Show when plan - paid
 								<a href="event.html" class="info">View</a>-->
 			  </div>
@@ -216,14 +216,30 @@ Author URL: http://w3layouts.com
             // Clear the list before adding new <li> elements
             planList.innerHTML = '';
 
+			//initialize buttons
+			const button1 = document.getElementById('btn1');
+			const button2 = document.getElementById('btn2');
+			const button3 = document.getElementById('btn3');
+
             if (planConnections && planConnections.length > 0) {
               planConnections.forEach(connection => {
                 const planName = connection.planName;
                 console.log('Plan Name:', planName);
 
+				//Show plans
                 const listItem = document.createElement('li');
                 listItem.textContent = planName;
                 planList.appendChild(listItem);
+
+				//check and hide/show plans btn
+				if (planName === "Pegasus Plan") {    
+				   button1.style.display = 'none';
+				} else if (planName === "Test Plan") {  
+					button2.style.display = 'none';
+			   } else if (planName === "paid") {  
+					button3.style.display = 'none';
+			   }
+
               });
             } else {
               // If no plans found, show the no-plans-message
@@ -243,34 +259,6 @@ Author URL: http://w3layouts.com
     });
   </script>
 
-<script>
-	document.addEventListener("DOMContentLoaded", async function() {
-	const memberstack = window.$memberstackDom;
-	memberstack.getCurrentMember().then(async ({ data: member }) => {
-		 if (member.data) {
-			   const planId= JSON.stringify(member.data["planConnections"][0]["planId"]);
-			   console.log('planId',planId)
-			 /*  const button1 = document.getElementById('your-button-id1');
-			   const button2 = document.getElementById('your-button-id2');
-			   const button3 = document.getElementById('your-button-id3');
-			   if (planId === "Memberstack_planID1") {    
-				   button1.style.display = 'none';
-				   button2.style.display = 'block';
-				   button3.style.display = 'block';
-				} else if (planId === "Memberstack_planID2") {  
-					button1.style.display = 'block';
-					button2.style.display = 'none';
-					button3.style.display = 'block';
-			   } else if (planId === "Memberstack_planID3") {  
-					button1.style.display = 'block';
-					button2.style.display = 'block';
-					button3.style.display = 'none';
-			   }
-			   */
-		}
-	})
-	});
-	</script>
 
 
 </body>
