@@ -235,29 +235,26 @@ Author URL: http://w3layouts.com
 				//check and hide/show plans btn
 				if (planName === "Pegasus Plan") {    
 				   button1.style.display = 'none';
-				   button1a.style.display = 'block';
+				   button1a.style.display = 'inline-block';
 				}else{
-					button1.style.display = 'block';
+					button1.style.display = 'inline-block';
 					button1a.style.display = 'none';
 				}  
 				if (planName === "Test Plan") {    
 				   button2.style.display = 'none';
-				   button2a.style.display = 'block';
+				   button2a.style.display = 'inline-block';
 				}else{
-					button2.style.display = 'block';
+					button2.style.display = 'inline-block';
 					button2a.style.display = 'none';
 				}  
-			/*	if (planName === "Test Plan") {  
-					button2.style.display = 'none';
-			   } else{
-				button2a.style.display = 'none';
-			   } 
-			   if (planName === "paid") {  
-					button3.style.display = 'none';
-			   }else{
-				button3a.style.display = 'none';
-			   }*/
-
+				if (planName === "paid") {    
+				   button3.style.display = 'none';
+				   button3a.style.display = 'inline-block';
+				}else{
+					button3.style.display = 'inline-block';
+					button3a.style.display = 'none';
+				}  
+				
               });
             } else {
               // If no plans found, show the no-plans-message
