@@ -83,8 +83,8 @@ Author URL: http://w3layouts.com
 				<p>In the vast ocean, a hidden Pirate's Cove awaits intrepid adventurers.</p>
 								<!--paid. show when no plan-->
 								<a href="#" class="info" data-ms-price:add="prc_1000-test-plan-xn20x5l" id="btn2">Enter</a>
-								<!--Show when plan - 
-								<a href="event.html" class="info" >View</a>paid-->
+				<!--Show when plan - paid-->
+				<a href="event.html" class="info" id="btn2a">View</a>
 			  </div>
 			</div>
 			<div class="view view-first">
@@ -94,8 +94,8 @@ Author URL: http://w3layouts.com
 				<p>Step into a world of magic and fantasy, where dragons soar through the skies.</p>
 								<!--paid. show when no plan-->
 								<a href="#" class="info" data-ms-price:add="prc_pro-xrd0s37" id="btn3">Enter</a>
-								<!--Show when plan - paid
-								<a href="event.html" class="info">View</a>-->
+				<!--Show when plan - paid-->
+				<a href="event.html" class="info" id="btn3a">View</a>
 			  </div>
 			</div>
 		
@@ -256,6 +256,11 @@ Author URL: http://w3layouts.com
               // If no plans found, show the no-plans-message
               const noPlansMessage = document.getElementById('no-plans-message');
               noPlansMessage.style.display = 'block';
+			  console.log('No plans at all')
+			  //hide all view btns
+			  button1a.style.display = 'none';
+			  button2a.style.display = 'none';
+			  button3a.style.display = 'none';
             }
           })
           .catch(error => {
