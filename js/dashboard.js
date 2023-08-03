@@ -126,42 +126,42 @@ document.addEventListener('DOMContentLoaded', function() {
               const planName = connection.planName;
   
               // Check plan names and update variables
-              if (planName === 'Pegasus Plan') {
+              if (planName === 'The Lost Temple') {
                 plan1 = true;
               }
-              if (planName === 'Test Plan') {
+              if (planName === "Pirate's Cove") {
                 plan2 = true;
               }
-              if (planName === 'paid') {
+              if (planName === 'Fantasy Realm') {
                 plan3 = true;
               }
             });
   
             // Check and show/hide buttons based on plan existence
             if (plan1) {
-              console.log("Plan 'Pegasus Plan' exists.");
+              console.log("Plan 'The Lost Temple' exists.");
               button1.style.display = 'none';
               button1a.style.display = 'inline-block';
             } else {
-              console.log("Plan 'Pegasus Plan' does not exist.");
+              console.log("Plan 'The Lost Temple' does not exist.");
               button1a.style.display = 'none';
             }
   
             if (plan2) {
-              console.log("Plan 'Test Plan' exists.");
+              console.log("Plan 'Pirate's Cove' exists.");
               button2.style.display = 'none';
               button2a.style.display = 'inline-block';
             } else {
-              console.log("Plan 'Test Plan' does not exist.");
+              console.log("Plan 'Pirate's Cove' does not exist.");
               button2a.style.display = 'none';
             }
   
             if (plan3) {
-              console.log("Plan 'paid' exists.");
+              console.log("Plan 'Fantasy Realm' exists.");
               button3.style.display = 'none';
               button3a.style.display = 'inline-block';
             } else {
-              console.log("Plan 'paid' does not exist.");
+              console.log("Plan 'Fantasy Realm' does not exist.");
               button3a.style.display = 'none';
             }
   
