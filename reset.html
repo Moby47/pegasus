@@ -52,17 +52,18 @@ Author URL: http://w3layouts.com
 	<div class="container">
 	
 		<div class="contact">
-			<h3 class="page-header">Forgot password</h3>
+			<h3 class="page-header">Reset password</h3>
 		
 			<div class="contact-box">
 
-				<form data-ms-form="forgot-password" method="post" action="reset.html">
+				<form data-ms-form="reset-password" method="post" onsubmit="return redirectToResetPage();">
 
 				<div class="text">
-					<input type="email" name="w3lSender" placeholder="Email" required="" data-ms-member="email"/>
+					<input type="text" name="w3lSender" placeholder="6 didit code" required="" data-ms-member="token"/>
+                    <input type="password" name="w3lSubject" placeholder="New Password" required="" data-ms-member="password"/>
 				</div>
 				<div>
-					<input type="submit" class="submit" value="submit" />
+					<input type="submit" class="submit" value="Reset Password" />
 				</div>
 			</form>
 
@@ -86,6 +87,12 @@ Author URL: http://w3layouts.com
 			   window.location.replace("members.html");
 		  }
 		})
+
+        function redirectToResetPage() {
+    window.location.href = "signin.html";
+    return false; // Prevents the form from submitting conventionally
+  }
+
 	</script>
 
 
