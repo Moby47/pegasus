@@ -108,7 +108,7 @@ ul.navig li a:hover {
 }
 
 .banner {
-	background: url(../images/banner.jpg)no-repeat;
+	background: url('../images/banner.jpg')no-repeat;
 	background-size: cover;
 	-webkit-background-size: cover;
 	-o-background-size: cover;
