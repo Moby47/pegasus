@@ -28,6 +28,8 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(response => response.json())
         .then(data => {
           console.log('data',data)
+          return;
+
           // Get the plan connections from the member data
           const planConnections = data.data.planConnections;
 
@@ -75,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
 
 
-/* ************************************************************** */
+/* ************************************************************** 
 
 
 
@@ -187,6 +189,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
   
-
+*/
 
 
