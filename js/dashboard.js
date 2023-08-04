@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if (email) {
         // Encode the email for use in the URL
         const encodedEmail = encodeURIComponent(email);
-        const apiKey = 'sk_sb_6ab7fbb6fcfca120020f';
+        const apiKey = 'sk_sb_32d7476fab908c4842cc';
         
         // Construct the URL for the API request
         const url = `https://admin.memberstack.com/members/${encodedEmail}`;
@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if (email) {
         // Encode the email for use in the URL
         const encodedEmail = encodeURIComponent(email);
-        const apiKey = 'sk_sb_6ab7fbb6fcfca120020f';
+        const apiKey = 'sk_sb_32d7476fab908c4842cc';
         
         // Construct the URL for the API request
         const url = `https://admin.memberstack.com/members/${encodedEmail}`;
