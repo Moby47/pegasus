@@ -27,10 +27,11 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .then(response => response.json())
         .then(data => {
+          console.log('data',data)
           // Get the plan connections from the member data
           const planConnections = data.data.planConnections;
 
-          console.log('data',data)
+          
           console.log('planConnections',planConnections)
           
           // Find the plan list element
