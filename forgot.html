@@ -56,7 +56,7 @@ Author URL: http://w3layouts.com
 		
 			<div class="contact-box">
 
-				<form data-ms-form="forgot-password" method="post" action="/reset.html">
+				<form data-ms-form="forgot-password" method="post" onsubmit="return redirectToResetPage();">
 
 				<div class="text">
 					<input type="email" name="w3lSender" placeholder="Email" required="" data-ms-member="email"/>
@@ -86,6 +86,12 @@ Author URL: http://w3layouts.com
 			   window.location.replace("members.html");
 		  }
 		})
+
+        function redirectToResetPage() {
+    window.location.href = "reset.html";
+    return false; // Prevents the form from submitting conventionally
+  }
+
 	</script>
 
 
