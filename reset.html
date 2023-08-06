@@ -56,7 +56,7 @@ Author URL: http://w3layouts.com
 		
 			<div class="contact-box">
 
-				<form data-ms-form="reset-password" method="post" onsubmit="return redirectToResetPage();">
+				<form data-ms-form="reset-password" method="post" onsubmit="redirectToResetPage();">
 
 				<div class="text">
 					<input type="text" name="w3lSender" placeholder="6 didit code" required="" data-ms-member="token"/>
@@ -89,6 +89,8 @@ Author URL: http://w3layouts.com
 		})
 
         function redirectToResetPage() {
+			event.preventDefault(); // Prevent the default form submission behavior
+    
       // Delay the redirection by a short interval to allow form submission
       setTimeout(function () {
         window.location.href = "signin.html";

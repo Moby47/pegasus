@@ -56,7 +56,7 @@ Author URL: http://w3layouts.com
 		
 			<div class="contact-box">
 
-				<form data-ms-form="forgot-password" method="post" onsubmit="return redirectToResetPage();">
+				<form data-ms-form="forgot-password" method="post" onsubmit="redirectToResetPage();">
 
 				<div class="text">
 					<input type="email" name="w3lSender" placeholder="Email" required="" data-ms-member="email"/>
@@ -88,6 +88,8 @@ Author URL: http://w3layouts.com
 		})
 
         function redirectToResetPage() {
+			event.preventDefault(); // Prevent the default form submission behavior
+    
       // Delay the redirection by a short interval to allow form submission
       setTimeout(function () {
         window.location.href = "reset.html";
