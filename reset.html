@@ -9,7 +9,7 @@ Author URL: http://w3layouts.com
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 
 <!-- Memberstack webflow package -->
-<script data-memberstack-app="app_clkvk55a900oe0uir132kfnrt" src="https://static.memberstack.com/scripts/v1/memberstack.js" type="text/javascript"></script>
+<script data-memberstack-app="app_cl6avui88003z0ulo9rgd5k4p" src="https://static.memberstack.com/scripts/v1/memberstack.js" type="text/javascript"></script>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="js/jquery-1.11.0.min.js"></script>
@@ -56,7 +56,7 @@ Author URL: http://w3layouts.com
 		
 			<div class="contact-box">
 
-				<form data-ms-form="reset-password" method="post" >
+				<form method="post" onsubmit="submitFormAndRedirect(); return false;">
 
 				<div class="text">
 					<input type="text" name="w3lSender" placeholder="6 didit code" required="" data-ms-member="token"/>
@@ -88,11 +88,17 @@ Author URL: http://w3layouts.com
 		  }
 		})
 
-        function redirectToResetPage() {
-    window.location.href = "signin.html";
-    //return false; // Prevents the form from submitting conventionally
-  }
+ function submitFormAndRedirect() {
+    const form = document.querySelector('[data-ms-form="reset-password"]');
+    if (form) {
+      form.submit(); // Submit the form
 
+      // Delay the redirection by a short interval to allow form submission
+      setTimeout(function () {
+        window.location.href = "signin.html";
+      }, 500); // Adjust the delay as needed
+    }
+  }
 	</script>
 
 
