@@ -122,10 +122,12 @@ Author URL: http://w3layouts.com
 window.$memberstackDom.getCurrentMember().then((member) => {
   if (member.data) {
     const planConnections = member.data["planConnections"];
+	console.log('planConnections',planConnections)
     let hasLostTemplePlan = false;
 
     planConnections.forEach((connection) => {
       const planId = connection["planId"];
+	  console.log('planId',planId)
       if (planId === 'prc_pro-e1-fgo80rpk') {
         hasLostTemplePlan = true;
       } 
@@ -133,8 +135,10 @@ window.$memberstackDom.getCurrentMember().then((member) => {
 
     if (hasLostTemplePlan) {
       //do nothing
+	  console.log('right access')
     } else{
-      window.location.replace("denied.html");
+		console.log('unauthorized access. redirect!')
+      //window.location.replace("denied.html");
     } 
   }
 });
