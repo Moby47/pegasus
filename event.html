@@ -104,5 +104,44 @@ Author URL: http://w3layouts.com
 	
 </div>
 <!-- Footer Ends Here -->
+
+
+<script>
+	const memberstack = window.$memberstackDom
+	memberstack.getCurrentMember().then((member) => {
+		  if (member.data) {
+			   window.location.replace("members.html");
+		  }
+		})
+
+
+		// ********************************** //
+
+window.$memberstackDom.getCurrentMember().then((member) => {
+  if (member.data) {
+    const planConnections = member.data["planConnections"];
+    let hasLostTemplePlan = false;
+
+    planConnections.forEach((connection) => {
+      const planId = connection["planId"];
+      if (planId === 'pln_piratescove-xyz123') {
+        hasPiratesCovePlan = true;
+      } 
+    });
+
+    if (hasPiratesCovePlan) {
+      //do nothing
+    } else{
+      window.location.replace("denied.html");
+    } 
+  }
+});
+
+
+	</script>
+
+
+
+
 </body>
 </html>

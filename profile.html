@@ -1,0 +1,168 @@
+<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Pegasus Gaming Event | Sign Up</title>
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+
+<!-- Memberstack webflow package -->
+<script data-memberstack-app="app_cl6avui88003z0ulo9rgd5k4p" src="https://static.memberstack.com/scripts/v1/memberstack.js" type="text/javascript"></script>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery-1.11.0.min.js"></script>
+<!-- Custom Theme files -->
+<link href="css/style.css" rel='stylesheet' type='text/css' />
+<!-- Custom Theme files -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Google Fonts -->
+<link href='//fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<!-- Header Starts Here -->
+<div class="header">
+	<div class="container">
+		<div class="logo">
+			<a href="index.html"><img src="images/logo2.png" width="180px" alt=""></a>
+		</div>
+		<span class="menu"></span>
+		<div class="navigation">
+			<ul class="navig cl-effect-3" >
+				<li><a href="index.html">Home</a></li>
+			</ul>
+			<div class="clearfix"></div>
+			<script>
+				$( "span.menu" ).click(function() {
+				  $( ".navigation" ).slideToggle( "slow", function() {
+				    // Animation complete.
+				  });
+				});
+			</script>
+			<div class="clearfix"></div>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+</div>
+<!-- Header Ends Here -->
+<!-- Games Page Starts here -->
+<div class="games">
+	<div class="container">
+	
+		<div class="contact">
+			<h3 class="page-header">My Profile</h3>
+		
+			<div class="contact-box">
+				<form data-ms-form="profile" method="post">
+				<div class="text">
+					<input type="text" name="w3lSender" placeholder="First Name" required="" data-ms-member="name"/>
+				</div>
+				<div>
+					<input type="submit" class="submit" value="Update Name" />
+				</div>
+			</form>
+
+
+			</div>
+		</div>
+
+        <div class="clearfix"></div>
+
+        <!-- ----------------------- -->
+<hr style="height: 5px; background-color: black; margin-top: 10px;">
+
+        <div class="contact">
+		
+			<div class="contact-box">
+				<form data-ms-form="email" method="post">
+				<div class="text">
+					<input type="email" name="w3lSender" placeholder="Email" required="" data-ms-member="email"/>
+				</div>
+				<div>
+					<input type="submit" class="submit" value="Update Email" />
+				</div>
+			</form>
+
+
+			</div>
+		</div>
+
+        
+                <!-- ----------------------- -->
+                <div class="clearfix"></div>
+<hr style="height: 5px; background-color: black; margin-top: 10px;">
+
+<div class="contact">
+
+    <div class="contact-box">
+        <form data-ms-form="password" method="post">
+        <div class="text">
+            <input type="password" name="w3lSubject" placeholder="Current Password" required="" data-ms-member="current-password"/>
+            <input type="password" name="w3lSubject" placeholder="New Password" required="" data-ms-member="new-password"/>
+        </div>
+        <div>
+            <input type="submit" class="submit" value="Update Password" />
+        </div>
+    </form>
+
+
+    </div>
+</div>
+
+
+ <!-- ----------------------- -->
+ <div class="clearfix"></div>
+ <hr style="height: 5px; background-color: black; margin-top: 10px;">
+ 
+ <div class="contact">
+ 
+     <div class="contact-box">
+       Profile Image
+         <div class="text">
+             <input type="image" name="w3lSubject"  data-ms-member="profile-image"/>
+             <input type="image" name="w3lSubject"  data-ms-action="profile-image"/>
+         </div>
+ 
+ 
+     </div>
+ </div>
+
+ 
+
+
+              <!-- ----------------------- -->
+              <div class="clearfix"></div>
+              <hr style="height: 5px; background-color: black; margin-top: 10px;">
+              
+              <div class="contact">
+              
+                  <div class="contact-box">
+                      <div>
+                          <input class="submit" value="Stripe Customer Portal" data-ms-action="customer-portal"/>
+                      </div>
+                 
+              
+              
+                  </div>
+              </div>
+
+
+	</div>
+</div>
+<!-- Footer Starts Here -->
+
+<!-- Footer Ends Here -->
+
+<script>
+	const memberstack = window.$memberstackDom
+	memberstack.getCurrentMember().then((member) => {
+		  if (member.data) {
+			   window.location.replace("members.html");
+		  }
+		})
+	</script>
+	
+</body>
+</html>
