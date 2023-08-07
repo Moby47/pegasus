@@ -126,12 +126,12 @@ window.$memberstackDom.getCurrentMember().then((member) => {
 
     planConnections.forEach((connection) => {
       const planId = connection["planId"];
-      if (planId === 'pln_piratescove-xyz123') {
-        hasPiratesCovePlan = true;
+      if (planId === 'prc_pro-e1-fgo80rpk') {
+        hasLostTemplePlan = true;
       } 
     });
 
-    if (hasPiratesCovePlan) {
+    if (hasLostTemplePlan) {
       //do nothing
     } else{
       window.location.replace("denied.html");

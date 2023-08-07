@@ -105,5 +105,43 @@ Author URL: http://w3layouts.com
 	
 </div>
 <!-- Footer Ends Here -->
+
+<script>
+	const memberstack = window.$memberstackDom
+	memberstack.getCurrentMember().then((member) => {
+		  if (member.data) {
+			 //do nothing
+			}else{
+				window.location.replace("signin.html");
+		  }
+		})
+
+
+		// ********************************** //
+
+window.$memberstackDom.getCurrentMember().then((member) => {
+  if (member.data) {
+    const planConnections = member.data["planConnections"];
+    let hasFantasyRealm = false;
+
+    planConnections.forEach((connection) => {
+      const planId = connection["planId"];
+      if (planId === 'prc_pro-e3-47lh0sfh') {
+        hasFantasyRealm = true;
+      } 
+    });
+
+    if (hasFantasyRealm) {
+      //do nothing
+    } else{
+      window.location.replace("denied.html");
+    } 
+  }
+});
+
+
+	</script>
+
+
 </body>
 </html>
