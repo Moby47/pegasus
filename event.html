@@ -122,12 +122,10 @@ Author URL: http://w3layouts.com
 window.$memberstackDom.getCurrentMember().then((member) => {
   if (member.data) {
     const planConnections = member.data["planConnections"];
-	console.log('planConnections',planConnections)
     let hasLostTemplePlan = false;
 
     planConnections.forEach((connection) => {
       const planId = connection["planId"];
-	  console.log('planId',planId)
       if (planId === 'pln_the-lost-temple-rso50rcl') {
         hasLostTemplePlan = true;
       } 
@@ -137,8 +135,7 @@ window.$memberstackDom.getCurrentMember().then((member) => {
       //do nothing
 	  console.log('right access')
     } else{
-		console.log('unauthorized access. redirect!')
-      //window.location.replace("denied.html");
+	window.location.replace("denied.html");
     } 
   }
 });
