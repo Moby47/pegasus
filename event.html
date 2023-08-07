@@ -110,7 +110,9 @@ Author URL: http://w3layouts.com
 	const memberstack = window.$memberstackDom
 	memberstack.getCurrentMember().then((member) => {
 		  if (member.data) {
-			   window.location.replace("members.html");
+			 //do nothing
+			}else{
+				window.location.replace("signin.html");
 		  }
 		})
 
