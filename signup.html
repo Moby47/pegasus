@@ -20,6 +20,30 @@ Author URL: http://w3layouts.com
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- Google Fonts -->
 <link href='//fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
+
+<style>
+	/* Add Google logo as a background image */
+.google-button {
+	background-image: url('images/google.png');
+	background-size: 29px; /* Adjust the size of the logo */
+	background-repeat: no-repeat;
+	background-position: 1px center; /* Adjust the position of the logo */
+	padding-left: 40px; /* Create space for the logo */
+	font-family: 'Roboto', sans-serif; /* Use Google's Roboto font */
+	background-color: #fff; /* Google Blue color */
+	border-radius: 4px;
+	cursor: pointer;
+	padding: 10px 20px;
+	margin-top: 10px;
+	font-size: 14px;
+  }
+  
+  /* On hover effect */
+  .google-button:hover {
+	background-color: #357AE8; /* Darker blue color */
+  }
+</style>
+
 </head>
 <body>
 <!-- Header Starts Here -->
@@ -65,6 +89,9 @@ Author URL: http://w3layouts.com
 				<div>
 					<input type="submit" class="submit" value="submit" />
 				</div>
+
+				<input type="button" class="google-button" value="continue with Google" data-ms-auth-provider="google"/>
+				
 			</form>
 
 			<p style="margin-top: 100px;">Already have an account? <a href="signin.html" class="text-info">Sign in here</a>.</p>
