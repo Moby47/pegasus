@@ -20,6 +20,30 @@ Author URL: http://w3layouts.com
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- Google Fonts -->
 <link href='//fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
+
+<style>
+	/* Add Google logo as a background image */
+.google-button {
+	background-image: url('images/google.png');
+	background-size: 20px; /* Adjust the size of the logo */
+	background-repeat: no-repeat;
+	background-position: 1px center; /* Adjust the position of the logo */
+	padding-left: 40px; /* Create space for the logo */
+	font-family: 'Roboto', sans-serif; /* Use Google's Roboto font */
+	background-color: #fff; /* Google Blue color */
+	border-radius: 4px;
+	cursor: pointer;
+	padding: 10px 20px;
+	margin-top: 10px;
+	font-size: 14px;
+  }
+  
+  /* On hover effect */
+  .google-button:hover {
+	background-color: #357AE8; /* Darker blue color */
+  }
+</style>
+
 </head>
 <body>
 <!-- Header Starts Here -->
@@ -100,8 +124,10 @@ Author URL: http://w3layouts.com
     <div class="contact-box">
         <form data-ms-form="password" method="post">
         <div class="text">
+			<div data-ms-content="has-password">
             <input type="password" name="w3lSubject" placeholder="Current Password" required="" data-ms-member="current-password"/>
-            <input type="password" name="w3lSubject" placeholder="New Password" required="" data-ms-member="new-password"/>
+		</div>
+		  <input type="password" name="w3lSubject" placeholder="New Password" required="" data-ms-member="new-password"/>
         </div>
         <div>
             <input type="submit" class="submit" value="Update Password" />
@@ -147,6 +173,23 @@ Author URL: http://w3layouts.com
               
                   </div>
               </div>
+
+
+
+			                <!-- ----------------------- -->
+							<div class="clearfix"></div>
+							<hr style="height: 5px; background-color: black; margin-top: 10px;">
+							
+							<div class="contact" data-ms-auth="manage-providers">
+							
+								<div class="contact-box">
+
+		<p data-ms-auth-connected-text="Disconnect Google"></p>
+<input type="button" class="google-button" value="continue with Google" data-ms-auth-provider="google"/>
+<div data-ms-auth-disconnect="true"></div>
+			
+								</div>
+							</div>
 
 
 	</div>
