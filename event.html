@@ -121,6 +121,11 @@ Author URL: http://w3layouts.com
 
 window.$memberstackDom.getCurrentMember().then((member) => {
   if (member.data) {
+
+	console.log('mem',member)
+	console.log('memD',member.data)
+
+
     const planConnections = member.data["planConnections"];
     let hasLostTemplePlan = false;
 
