@@ -122,8 +122,7 @@ Author URL: http://w3layouts.com
 window.$memberstackDom.getCurrentMember().then((member) => {
   if (member.data) {
 
-	console.log('mem',member)
-	console.log('memD',member.data)
+	console.log('memD',member.data.customFields.extra)
 
 
     const planConnections = member.data["planConnections"];
